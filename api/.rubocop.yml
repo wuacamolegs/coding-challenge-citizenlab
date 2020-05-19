@@ -1,0 +1,60 @@
+# This is the configuration used to check the rubocop source code.
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - db/**/*
+    - config/**/*
+    - bin/**/*
+    - lib/**/*
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+    - vendor/**/*
+
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+HasAndBelongsToMany:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 150
+
+RSpec/SubjectStub:
+  Enabled: false
+
+# Soon to be deprecated, received warning when running rubocop
+FactoryBot/StaticAttributeDefinedDynamically:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 6
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+# Would throw an error with Cequel because of similarly named methods
+Rails/ActiveRecordAliases:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 12
